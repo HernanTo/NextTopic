@@ -39,16 +39,25 @@ Route::post('/continue/register', [VerificationController::class, 'createAccount
         if($userExists){
             Auth::login($userExists);
         }else{
-            $userNew = User::create([
-                'external_id' => $user->id,
-                'external_auth' => 'google',
-                'name' => $user->name,
-                'avatar' => $user->avatar,
-                'email' => $user->email,
-                'email_verified_at' => date('Y-m-d H:i:s'),
-                'is_active' => 1,
-            ]);
-            Auth::login($userNew);
+            $userRegister = User::where('email', $user->email)->get()->first();
+            if($userRegister){
+                $userRegister->update([
+                    'external_id' => $user->id,
+                    'external_auth' => 'google',
+                ]);
+                Auth::login($userRegister);
+            }else{
+                $userNew = User::create([
+                    'external_id' => $user->id,
+                    'external_auth' => 'google',
+                    'name' => $user->name,
+                    'avatar' => $user->avatar,
+                    'email' => $user->email,
+                    'email_verified_at' => date('Y-m-d H:i:s'),
+                    'is_active' => 1,
+                ]);
+                Auth::login($userNew);
+            }
         }
 
         return redirect('dashboard');
