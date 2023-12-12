@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\FormCreateAccount;
+use App\Http\Requests\FormCreateAccountRequest;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 
 class VerificationController extends Controller
@@ -26,7 +30,7 @@ class VerificationController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::CONTINUEREGISTER;
 
     /**
      * Create a new controller instance.
@@ -38,5 +42,18 @@ class VerificationController extends Controller
         $this->middleware('auth');
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');
+    }
+
+    public function continueRegister(){
+        return view('auth.continue');
+    }
+    public function createAccount(FormCreateAccountRequest $request){
+
+        $user = User::find(auth()->user()->id);
+        $user->update([
+            'name' => $request->name
+        ]);
+
+        return \redirect('/');
     }
 }

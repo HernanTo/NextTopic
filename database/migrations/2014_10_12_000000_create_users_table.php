@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('external_id')->nullable();
             $table->string('external_auth')->nullable();
 
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('avatar')->nullable();
             $table->string('bio', 200)->nullable();
             $table->string('photo', 2048)->nullable();

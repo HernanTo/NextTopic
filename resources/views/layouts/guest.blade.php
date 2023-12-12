@@ -28,6 +28,7 @@
         @csrf
         <input type="submit" value="salir">
     </form> --}}
+    <header><h1>NextTopic</h1></header>
     <main class="container__main">
         @yield('content')
     </main>
