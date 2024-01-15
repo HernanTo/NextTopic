@@ -1,0 +1,111 @@
+.container__two__clms{
+    display: grid;
+    position: relative;
+}
+.aside__content{
+    display: none;
+    padding: 30px;
+}
+.aside__content .card__saved h3{
+    font-family: 'Nunito Sans';
+    font-weight: bold;
+    font-size: 17px;
+    margin: 0px;
+}
+.aside__content .card__saved figure{
+    margin: 0px;
+    height: 100%;
+    width: 20px;
+}
+.aside__content .card__min__post {
+    padding: 15px 0px;
+    max-width: 290px;
+    display: grid;
+    row-gap: 15px;
+}
+.card__saved{
+    height: fit-content;
+}
+.card__saved .header__min__post{
+    display: flex;
+    align-items: center;
+    height: 20px;
+    column-gap: 10px;
+    text-decoration: none;
+    color: #000000a6;
+}
+.card__saved .header__min__post h4{
+    margin: 0px;
+    font-family: 'Poppins';
+    font-size: 15px;
+    height: 100%;
+    padding-top: 5px;
+}
+.card__min__post .body_min__post{
+    text-decoration: none;
+    color: var(--color-letter-light);
+}
+.card__min__post .body_min__post h4{
+    margin: 0px;
+    font-family: var(--font-main);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.aside__content .card__saved figure img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.body__content{
+    display: grid;
+    justify-content: center;
+}
+.full__saved a{
+    color: var(--main-color);
+    text-decoration: none;
+    font-family: 'Nunito Sans';
+}
+.card__post__c{
+    height: fit-content;
+    background-color: var(--main-color) !important;
+    text-decoration: none;
+}
+.card__post__c .card-header{
+    border: none;
+    font-family: var(--font-main);
+    font-weight: bold;
+}
+.card__body__as{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 8px;
+    column-gap: 8px;
+    padding: 10px 0px;
+    max-width: 290px;
+}
+.card__body__as a{
+    background: #d9d9d9;
+    color: #7e7b7b;
+    padding: 5px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Nunito Sans';
+}
+@media (min-width:1150px){
+    .aside__content{
+     display: grid;
+     /* position: fixed; */
+     right: 0px;
+     width: 100%;
+     min-width: 441px;
+     height: fit-content;
+     grid-auto-rows: auto;
+     row-gap: 20px;
+    }
+    .container__two__clms{
+        display: grid;
+        grid-template-columns: 1fr 450px;
+    }
+}

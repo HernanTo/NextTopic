@@ -1,7 +1,15 @@
+:root{
+    --main-color: #238e92;
+    --mark-color: #238e924f;
+    --color-letter-light: #000;
+    --font-main: 'Hedvig Letters Serif';
+}
+
 .container__main{
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: minmax(250px, 1400px);
     min-height: 300px;
+    justify-content: center;
 }
  .btn__subm{
     background-color: rgba(0, 0, 0, 0.825);
@@ -20,3 +28,16 @@ header h1{
     text-align: center;
     padding-top: 15px;
 }
+:root{
+    --font-main: 'Hedvig Letters Serif';
+}
+.reaction{
+    color: var(--main-color) !important;
+}
+.saved{
+    color: var(--color-letter-light);
+}
+html {
+    min-height: 100%;
+    position: relative;
+  }

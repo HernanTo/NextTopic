@@ -1,0 +1,12 @@
+.body__post h1{
+    font-family: 'Poppins';
+    font-size: 1.8em;
+    font-weight: bold;
+}
+.body__post p{
+    font-family: 'Nunito Sans';
+    font-size: 1.2em;
+}
+mark{
+    background-color: var(--mark-color) !important;
+}

@@ -1,4 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/libs/froala/js/froala_editor.pkgd.min.js": "/libs/froala/js/froala_editor.pkgd.min.js",
+    "/css/app.css": "/css/app.css",
+    "/libs/froala/css/froala_editor.pkgd.min.css": "/libs/froala/css/froala_editor.pkgd.min.css"
 }
